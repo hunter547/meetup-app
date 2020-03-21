@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import EventList from './EventList';
+import CitySearch from './CitySearch';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello world!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-         React Pro
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    events: []
+  }
+  render() {
+    return (
+      <div className="App">
+        <CitySearch />
+        <EventList events= {this.state.events} />
+      </div>
+    );
+  }
 }
 
 export default App;

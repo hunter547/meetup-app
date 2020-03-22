@@ -41,13 +41,13 @@ class Event extends Component {
             <p className="Event__visibility">
               {event.visibility}
             </p>
-            <a className="Event__link" 
+            <a className="Event__link"
               href={event.link}>
               Event link
             </a>
           </span>
-        : null}
-        <button className="Event__details-button" onClick={this.flipShowDetails}>Details</button>
+          : null}
+        <button className="Event__details-button" onClick={this.flipShowDetails}>Show Details</button>
       </div>
     );
 

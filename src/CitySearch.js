@@ -24,6 +24,7 @@ class CitySearch extends Component {
       <div className="CitySearch">
         <input
           type="type"
+          placeholder="City"
           className="CitySearch__city"
           value={this.state.query}
           onChange={this.handleInputChanged}

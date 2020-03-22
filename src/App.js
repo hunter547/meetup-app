@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
+import NumberOfEvents from './NumberOfEvents';
 
 class App extends Component {
   state = {
@@ -11,6 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         <CitySearch />
+        <NumberOfEvents />
         <EventList events= {this.state.events} />
       </div>
     );

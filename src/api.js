@@ -62,7 +62,7 @@ async function getAccessToken() {
   const accessToken = localStorage.getItem('access_token');
   
   if(!accessToken) {
-    const searchParams = new URLSearchParams(window.location.href);
+    const searchParams = new URLSearchParams(window.location.search);
     const code = searchParams.get('code');
 
     if(!code) {

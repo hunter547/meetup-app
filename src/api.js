@@ -69,7 +69,7 @@ async function getAccessToken() {
       window.location.href('https://secure.meetup.com/oauth2/authorize?client_id=mtfrifukvgtkbuoe34mesrflrf&response_type=code&redirect_uri=https://hunter547.github.io/meetup-app/');
       return null;
     }
-    return getOrRenewAcessToken('get', code);
+    return getOrRenewAccessToken('get', code);
   }
 
   const lastSavedTime = localStorage.getItem('last_saved_time');

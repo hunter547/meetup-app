@@ -10,9 +10,6 @@ describe('Render <NumberOfEvents /> component', ()=> {
   test('render main div', () => {
     expect(NumberOfEventsWrapper.find('.NumberOfEvents')).toHaveLength(1);
   });
-  test('render label', () => {
-    expect(NumberOfEventsWrapper.find('.NumberOfEvents__label')).toHaveLength(1);
-  });
   test('render span for input field', () => {
     expect(NumberOfEventsWrapper.find('.NumberOfEvents__input-span')).toHaveLength(1);
   });

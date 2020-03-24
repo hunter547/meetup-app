@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class NumberOfEvents extends Component {
   state = {
-    eventNumber: Number
+    eventNumber: 32
   }
   changeNumberOfEvents = (event) => {
     this.setState({
@@ -12,14 +12,13 @@ class NumberOfEvents extends Component {
   render() {
     return(
       <div className="NumberOfEvents">
-        <p className="NumberOfEvents__label">
-          Show <span className="NumberOfEvents__input-span">
+        <span className="NumberOfEvents__input-span">Show
             <input className="NumberOfEvents__input-field"
+              type="number"
               value={this.state.eventNumber}
               onChange={this.changeNumberOfEvents}
-            />
-          </span> Events
-        </p>
+            />Events
+        </span>
       </div>
     )
   }

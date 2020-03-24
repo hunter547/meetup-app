@@ -29,15 +29,15 @@ class Event extends Component {
         </p>
         {this.state.showDetails ?
           <span className="Event__details">
-            <p className="Event__address">
+            {event.venue ? <p className="Event__address">
               {event.venue.name + ', ' + event.venue.address_1 + ', ' +
                 event.venue.city + ', ' + event.venue.state + ' ' +
                 event.venue.zip
               }
-            </p>
-            <p className="Event__description">
-              {event.description}
-            </p>
+            </p> 
+            :null}
+            <div className="Event__description" dangerouslySetInnerHTML={{__html: event.description}}>
+            </div>
             <p className="Event__visibility">
               {event.visibility}
             </p>
@@ -47,7 +47,10 @@ class Event extends Component {
             </a>
           </span>
           : null}
-        <button className="Event__details-button" onClick={this.flipShowDetails}>Show Details</button>
+        {this.state.showDetails? 
+          <button className="Event__details-button" onClick={this.flipShowDetails}>Less Details</button> 
+          :
+          <button className="Event__details-button" onClick={this.flipShowDetails}>More Details</button>}  
       </div>
     );
 

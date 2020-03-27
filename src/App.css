@@ -61,7 +61,7 @@ input[type="text"], input[type="number"] {
 }
 
 .Event {
-  padding: 10px 10px 20px;
+  padding: 10px;
   margin-bottom: 10px;
   text-align: left;
   border: 1px solid #ccc;
@@ -70,13 +70,16 @@ input[type="text"], input[type="number"] {
 }
 
 .Event__details-button {
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
-  padding: 5px 8px;
-  border-radius: 4px;
   outline: none;
+  background: none;
+  border: none;
   cursor: pointer;
+  margin: 0 auto;
+}
+
+.Event__button-div {
+  margin-top: 1rem;
+  display: flex;
 }
 
 .Event__name {
@@ -95,6 +98,10 @@ input[type="text"], input[type="number"] {
 
 .Event__description {
   overflow-x: hidden;
+}
+
+.Event__up-arrow, .Event__down-arrow {
+  min-width: 2rem;
 }
 
 .NumberOfEvents__input-field {

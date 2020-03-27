@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import upArrow from './up-arrow.svg';
+import downArrow from './down-arrow.svg';
 
 class Event extends Component {
   state = {
@@ -34,9 +36,9 @@ class Event extends Component {
                 event.venue.city + ', ' + event.venue.state + ' ' +
                 event.venue.zip
               }
-            </p> 
-            :null}
-            <div className="Event__description" dangerouslySetInnerHTML={{__html: event.description}}>
+            </p>
+              : null}
+            <div className="Event__description" dangerouslySetInnerHTML={{ __html: event.description }}>
             </div>
             <p className="Event__visibility">
               {event.visibility}
@@ -47,10 +49,12 @@ class Event extends Component {
             </a>
           </span>
           : null}
-        {this.state.showDetails? 
-          <button className="Event__details-button" onClick={this.flipShowDetails}>Less Details</button> 
-          :
-          <button className="Event__details-button" onClick={this.flipShowDetails}>More Details</button>}  
+        <div className="Event__button-div">
+          {this.state.showDetails ?
+            <button className="Event__details-button" onClick={this.flipShowDetails}><img class="Event__up-arrow" src={upArrow} /></button>
+            :
+            <button className="Event__details-button" onClick={this.flipShowDetails}><img class="Event__down-arrow" src={downArrow} /></button>}
+        </div>
       </div>
     );
 

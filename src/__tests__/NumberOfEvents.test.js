@@ -1,11 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import NumberOfEvents from '../NumberOfEvents';
+import App from '../App';
 
 describe('Render <NumberOfEvents /> component', ()=> {
   let NumberOfEventsWrapper;
   beforeAll(() => {
-    NumberOfEventsWrapper = shallow(<NumberOfEvents />);
+    NumberOfEventsWrapper = shallow(<NumberOfEvents updateEvents={()=>{}}/>);
   });
   test('render main div', () => {
     expect(NumberOfEventsWrapper.find('.NumberOfEvents')).toHaveLength(1);

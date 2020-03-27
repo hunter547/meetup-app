@@ -25,7 +25,7 @@ class CitySearch extends Component {
       query: name_string,
       suggestions: []
     });
-    this.props.updateEvents(lat, lon);
+    this.props.updateEvents(lat, lon, null);
   }
 
   render() {

@@ -98,19 +98,17 @@ async function getOrRenewAccessToken(type, key) {
     // Lambda endpoint to get token by code
     url = 'https://af14dwzp5e.execute-api.us-east-1.amazonaws.com/dev/api/token/'
       + key;
-    
+
+    // Use Axios to make a GET request to the endpoint
     tokenInfo = await axios.get(url);  
 
   } else if (type === 'renew') {
     // Lambda endpoint to get token by refresh_token
     url = 'https://af14dwzp5e.execute-api.us-east-1.amazonaws.com/dev/api/refresh/'
       + key;
-    
+    // Use Axios to make a POST request to the endpoint
     tokenInfo = await axios.post(url);
   }
-
-  // Use Axios to make a GET request to the endpoint
-  const tokenInfo = await axios.get(url);
 
   // Save tokens to localStorage together with a timestamp
   localStorage.setItem('access_token', tokenInfo.data.access_token);

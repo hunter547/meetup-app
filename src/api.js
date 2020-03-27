@@ -93,14 +93,20 @@ async function getAccessToken() {
 
 async function getOrRenewAccessToken(type, key) {
   let url;
+  let tokenInfo;
   if (type === 'get') {
     // Lambda endpoint to get token by code
     url = 'https://af14dwzp5e.execute-api.us-east-1.amazonaws.com/dev/api/token/'
       + key;
+    
+    tokenInfo = await axios.get(url);  
+
   } else if (type === 'renew') {
     // Lambda endpoint to get token by refresh_token
     url = 'https://af14dwzp5e.execute-api.us-east-1.amazonaws.com/dev/api/refresh/'
       + key;
+    
+    tokenInfo = await axios.post(url);
   }
 
   // Use Axios to make a GET request to the endpoint

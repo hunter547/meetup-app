@@ -51,9 +51,9 @@ class Event extends Component {
           : null}
         <div className="Event__button-div">
           {this.state.showDetails ?
-            <button className="Event__details-button" onClick={this.flipShowDetails}><img class="Event__up-arrow" src={upArrow} /></button>
+            <button className="Event__details-button" onClick={this.flipShowDetails}><img className="Event__up-arrow" src={upArrow} alt="Less Details Button"/></button>
             :
-            <button className="Event__details-button" onClick={this.flipShowDetails}><img class="Event__down-arrow" src={downArrow} /></button>}
+            <button className="Event__details-button" onClick={this.flipShowDetails}><img className="Event__down-arrow" src={downArrow} alt="More Details Button"/></button>}
         </div>
       </div>
     );

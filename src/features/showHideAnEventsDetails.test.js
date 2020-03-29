@@ -12,7 +12,7 @@ defineFeature(feature, test => {
 
   afterAll(() => {
     AppWrapper.unmount();
-  })
+  });
 
   test('An event element is collapsed by default', ({ given, when, then }) => {
     given('the main page is open', () => {

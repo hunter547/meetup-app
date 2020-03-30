@@ -4,6 +4,7 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents } from './api';
+import { WarningAlert } from './Alert';
 
 class App extends Component {
 
@@ -14,7 +15,8 @@ class App extends Component {
 
   state = {
     events: [],
-    page: null
+    page: null,
+    warningText: '',
   }
 
   componentDidMount() {
@@ -26,6 +28,16 @@ class App extends Component {
     getEvents(lat, lon, page ? page : this.state.page).then(events => {
       if (this._isMounted) {
         this.setState({ events })
+        if (events.length < page) {
+          this.setState({
+            warningText: 'This area only has ' + events.length + ' events.'
+          })
+        }
+        else {
+          this.setState({
+            warningText: ''
+          })
+        }
       }
     });
 
@@ -45,6 +57,7 @@ class App extends Component {
       <div className="App">
         <CitySearch updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />
+        <WarningAlert text = {this.state.warningText} />
         <EventList events={this.state.events} />
       </div>
     );

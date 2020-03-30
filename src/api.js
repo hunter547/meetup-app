@@ -53,11 +53,21 @@ async function getEvents(lat, lon, page) {
     let url = 'https://api.meetup.com/find/upcoming_events?&sign=true&photo-host=public'
       + '&access_token=' + token;
     // lat, lon is optional; if you have a lat and lon, you can add them
-    if (lat && lon) {
+    if (lat && lon && page) {
       url += '&lat=' + lat + '&lon=' + lon;
+      url += '&page=' + page
+      localStorage.setItem('lat', lat);
+      localStorage.setItem('lon', lon);
     }
-    if (page) {
-      url += '&page=' + page;
+    if (page && !lat) {
+      if(!localStorage.getItem('lat')) {
+        url += '&page=' + page;
+      }
+      else {
+        url += '&lat=' + localStorage.getItem('lat') + '&lon=' + localStorage.getItem('lon');
+        url += '&page=' + page;
+      }
+      
     }
     const result = await axios.get(url);
     return result.data.events;

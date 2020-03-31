@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "eafc904f0ac6ffd369cbca1aef75493c",
+    "revision": "f1978169f0031f22db54f218b20dd2fb",
     "url": "/meetup-app/index.html"
   },
   {

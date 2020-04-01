@@ -28,16 +28,16 @@ class App extends Component {
     getEvents(lat, lon, page ? page : this.state.page).then(events => {
       if (this._isMounted) {
         this.setState({ events })
-        if (events.length < page) {
+        if (!navigator.onLine) {
           this.setState({
-            warningText: 'This area only has ' + events.length + ' events.'
+            warningText: 'You\'re currently offline. Cached data is being displayed.' 
           })
         }
         else {
           this.setState({
             warningText: ''
           })
-        }
+        }  
       }
     });
 
@@ -57,7 +57,7 @@ class App extends Component {
       <div className="App">
         <CitySearch updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />
-        <WarningAlert text = {this.state.warningText} />
+        <WarningAlert text ={this.state.warningText} />
         <EventList events={this.state.events} />
       </div>
     );

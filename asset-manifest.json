@@ -1,24 +1,26 @@
 {
   "files": {
-    "main.css": "/meetup-app/static/css/main.ce6113a8.chunk.css",
-    "main.js": "/meetup-app/static/js/main.b54da798.chunk.js",
-    "main.js.map": "/meetup-app/static/js/main.b54da798.chunk.js.map",
+    "main.css": "/meetup-app/static/css/main.dc9f6e38.chunk.css",
+    "main.js": "/meetup-app/static/js/main.ad913463.chunk.js",
+    "main.js.map": "/meetup-app/static/js/main.ad913463.chunk.js.map",
     "runtime-main.js": "/meetup-app/static/js/runtime-main.e65a3088.js",
     "runtime-main.js.map": "/meetup-app/static/js/runtime-main.e65a3088.js.map",
-    "static/js/2.a7aaebb1.chunk.js": "/meetup-app/static/js/2.a7aaebb1.chunk.js",
-    "static/js/2.a7aaebb1.chunk.js.map": "/meetup-app/static/js/2.a7aaebb1.chunk.js.map",
+    "static/js/2.86bbf8c2.chunk.js": "/meetup-app/static/js/2.86bbf8c2.chunk.js",
+    "static/js/2.86bbf8c2.chunk.js.map": "/meetup-app/static/js/2.86bbf8c2.chunk.js.map",
     "index.html": "/meetup-app/index.html",
-    "precache-manifest.a62e715b0cf7d2bbe25e7d87e68fd77b.js": "/meetup-app/precache-manifest.a62e715b0cf7d2bbe25e7d87e68fd77b.js",
+    "precache-manifest.39300c7f055244e9951c37c192658859.js": "/meetup-app/precache-manifest.39300c7f055244e9951c37c192658859.js",
     "service-worker.js": "/meetup-app/service-worker.js",
-    "static/css/main.ce6113a8.chunk.css.map": "/meetup-app/static/css/main.ce6113a8.chunk.css.map",
-    "static/js/2.a7aaebb1.chunk.js.LICENSE.txt": "/meetup-app/static/js/2.a7aaebb1.chunk.js.LICENSE.txt",
+    "static/css/main.dc9f6e38.chunk.css.map": "/meetup-app/static/css/main.dc9f6e38.chunk.css.map",
+    "static/js/2.86bbf8c2.chunk.js.LICENSE.txt": "/meetup-app/static/js/2.86bbf8c2.chunk.js.LICENSE.txt",
+    "static/media/2650148.svg": "/meetup-app/static/media/2650148.b4b5f79e.svg",
+    "static/media/App.css": "/meetup-app/static/media/Yellowtail-Regular.4a1b186e.ttf",
     "static/media/down-arrow.svg": "/meetup-app/static/media/down-arrow.31f5e50f.svg",
     "static/media/up-arrow.svg": "/meetup-app/static/media/up-arrow.2295ebc0.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.e65a3088.js",
-    "static/js/2.a7aaebb1.chunk.js",
-    "static/css/main.ce6113a8.chunk.css",
-    "static/js/main.b54da798.chunk.js"
+    "static/js/2.86bbf8c2.chunk.js",
+    "static/css/main.dc9f6e38.chunk.css",
+    "static/js/main.ad913463.chunk.js"
   ]
 }

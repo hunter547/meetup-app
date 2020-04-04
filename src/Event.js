@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import upArrow from './up-arrow.svg';
-import downArrow from './down-arrow.svg';
+import upArrow from './svgs/up-arrow.svg';
+import downArrow from './svgs/down-arrow.svg';
 
 class Event extends Component {
   state = {
@@ -16,7 +16,7 @@ class Event extends Component {
   render() {
     const { event } = this.props;
     return (
-      <div className="Event">
+      <div className="Event" onClick={this.flipShowDetails}>
         <p className="Event__time">
           {event.local_time + '-' + event.local_date}
         </p>

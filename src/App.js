@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Header from './Header';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
@@ -30,14 +31,14 @@ class App extends Component {
         this.setState({ events })
         if (!navigator.onLine) {
           this.setState({
-            warningText: 'You\'re currently offline. Cached data is being displayed.' 
+            warningText: 'You\'re currently offline. Cached data is being displayed.'
           })
         }
         else {
           this.setState({
             warningText: ''
           })
-        }  
+        }
       }
     });
 
@@ -55,10 +56,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <CitySearch updateEvents={this.updateEvents} />
-        <NumberOfEvents updateEvents={this.updateEvents} />
-        <WarningAlert text ={this.state.warningText} />
-        <EventList events={this.state.events} />
+        <Header />
+        <div className="App__non-header">
+          <CitySearch updateEvents={this.updateEvents} />
+          <NumberOfEvents updateEvents={this.updateEvents} />
+          <WarningAlert text={this.state.warningText} />
+          <EventList events={this.state.events} />
+        </div>
       </div>
     );
   }

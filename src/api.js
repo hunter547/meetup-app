@@ -23,6 +23,16 @@ async function getSuggestions(query) {
         zip: '58352',
         lat: 48.66,
         lon: -98.85
+      },
+      {
+        city: 'Munich',
+        country: 'us',
+        localized_country_name: 'USA',
+        state: 'SD',
+        name_string: 'Munich, South Dakota, USA',
+        zip: '58352',
+        lat: 48.66,
+        lon: -98.85
       }
     ];
   }

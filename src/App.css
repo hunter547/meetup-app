@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  background-color: #fdfdf9;
+  font-family: Montserrat;
+}
+
+.App__non-header {
   padding: 2% 5%;
 }
 
@@ -13,10 +18,15 @@ ul {
 }
 
 p {
+  margin: 0;
+}
+
+.App__non-header p {
   margin: 5px 0;
 }
 
 input[type="text"], input[type="number"] {
+  font-family: Montserrat;
   padding: 8px 6px 8px 10px;
   border-radius: 4px;
   outline: none;
@@ -28,6 +38,7 @@ input[type="text"], input[type="number"] {
 }
 
 .CitySearch__city {
+  margin-top: 2rem;
   width: 250px;
 }
 
@@ -56,17 +67,27 @@ input[type="text"], input[type="number"] {
 }
 
 
-.CitySearch__suggestions > li:hover {
-  background-color: #BCDCDB;
+.CitySearch__suggestions > li:hover, .CitySearch__highlight {
+  background-color: #BCDCDB !important;
+}
+
+.CitySearch__highlight {
+  cursor: none;
 }
 
 .Event {
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 1.5rem 1.5rem .75rem 1.5rem;
+  margin-bottom: 1rem;
   text-align: left;
   border: 1px solid #ccc;
   border-radius: 4px;
   position: relative;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.Event:hover {
+  box-shadow: 0 7px 14px rgba(32,62,80,0.25), 0 5px 5px rgba(32,62,80,0.22);
 }
 
 .Event__details-button {
@@ -108,4 +129,25 @@ input[type="text"], input[type="number"] {
   width: 3rem;
   margin: .5rem .5rem 1.5rem .5rem;
   text-align: right;
+}
+
+@font-face{
+  font-family: YellowTail;
+  src: url('./fonts/Yellowtail-Regular.ttf');
+}
+
+@font-face{
+  font-family: Montserrat;
+  src: url('./fonts/Montserrat-Medium.ttf');
+}
+
+.Header {
+  width: 100%;
+  background-color: #fdfdf9;
+}
+
+.Header__title {
+  font-family: YellowTail;
+  font-size: 15rem;
+  color: #F64060;
 }

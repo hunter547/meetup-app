@@ -6,6 +6,11 @@ import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents } from './api';
 import { WarningAlert } from './Alert';
+import moment from 'moment';
+import {
+  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, LabelList
+} from 'recharts';
+
 
 class App extends Component {
 
@@ -53,6 +58,35 @@ class App extends Component {
     this._isMounted = false;
   }
 
+  countEventsOnADate = (date) => {
+    if (this._isMounted) {
+      let count = 0;
+      for (let i = 0; i < this.state.events.length; i += 1) {
+        if (this.state.events[i].local_date === date) {
+          count += 1;
+        }
+      }
+      return count;
+    }
+  }
+
+  getData = () => {
+    if (this._isMounted) {
+      const next7Days = []; // Create empty array for the next 7 days
+      const currentDate = moment(); // Today
+      // Loop 7 times for next 7 days
+      for (let i = 0; i < 7; i += 1) {
+        currentDate.add(1, 'days'); // Add 1 day to current date, currentDate changes
+        const dateString = currentDate.format('YYYY-MM-DD'); // Format the date
+        // Use the countEventsOnADate function to count #events on this date
+        const count = this.countEventsOnADate(dateString);
+        const aestheticDate = currentDate.format('MMMM Do');
+        next7Days.push({ Date: aestheticDate, Events: count }); // Add this date and number to the list
+      }
+      return next7Days;
+    }
+  }
+
   render() {
     return (
       <div className="App">
@@ -61,6 +95,20 @@ class App extends Component {
           <CitySearch updateEvents={this.updateEvents} />
           <NumberOfEvents updateEvents={this.updateEvents} />
           <WarningAlert text={this.state.warningText} />
+          <ResponsiveContainer height={400}>
+            <BarChart
+              margin={{
+                top: 20, right: 20, bottom: 20, left: 20,
+              }}
+              data={this.getData()}>
+              <XAxis type="category" dataKey="Date" interval="preserveStartEnd" />
+              <YAxis allowDecimals={false}/>
+              <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+              <Bar dataKey="Events" fill="#F64060">
+                <LabelList dataKey="Events" position="top" />
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
           <EventList events={this.state.events} />
         </div>
       </div>

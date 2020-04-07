@@ -7,7 +7,7 @@ class Header extends Component {
     return(
       <div className="Header">
         <p className="Header__title">Linkup</p>
-        <img className="people-svg" src={people} alt="Group of friends" />
+        <img className="Header__people-svg" src={people} alt="Group of friends" />
       </div>
     )
   }

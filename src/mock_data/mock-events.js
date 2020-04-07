@@ -11,6 +11,64 @@ const mockEvents = {
   },
   events: [
     {
+      created: 1581975191000,
+      duration: 7200000,
+      fee: {
+        accepts: 'wepay',
+        amount: 5,
+        currency: 'USD',
+        description: '',
+        label: 'Price',
+        required: true
+      },
+      id: '268785462',
+      name: 'Easter Hike: Waterfalls & Rivers at Scotts Run Preserve! A Moderate 4-Mile Hike',
+      rsvp_limit: 10,
+      date_in_series_pattern: false,
+      status: 'upcoming',
+      time: 1586700000000,
+      local_date: '2020-04-12',
+      local_time: '10:00',
+      updated: 1584634726000,
+      utc_offset: -14400000,
+      waitlist_count: 0,
+      yes_rsvp_count: 7,
+      venue: {
+        id: 1236584,
+        name: 'Scotts Run Nature Preserve and Waterfall with Mid-Atlantic Hiking Group! A Moderate 4 Mile Hike',
+        lat: 38.63013458251953,
+        lon: -78.5206527709961,
+        repinned: true,
+        address_1: 'Directions: Click the link under “Directions to the Trailhead” located near the end of the event listing.',
+        address_2: 'The linked page has location/direction details, driving/parking info, including where to Meetup after you arrive.',
+        city: ' ',
+        country: 'us',
+        localized_country_name: 'USA',
+        zip: '',
+        state: 'VA'
+      },
+      group: {
+        created: 1185015652000,
+        name: 'Mid-Atlantic Hiking Group — A 501(c)(3) Charitable Org.',
+        id: 579832,
+        join_mode: 'approval',
+        lat: 38.90999984741211,
+        lon: -77.0199966430664,
+        urlname: 'Mid-Atlantic-Hiking-Group',
+        who: 'Outdoor Enthusiasts',
+        localized_location: 'Washington, DC',
+        state: 'DC',
+        country: 'us',
+        region: 'en_US',
+        timezone: 'US/Eastern'
+      },
+      link: 'https://www.meetup.com/Mid-Atlantic-Hiking-Group/events/268785462/',
+      description: '<p>Easter Hike to See Waterfalls &amp; Rivers at Scotts Run Preserve! A Moderate 4-Mile Hike</p> <p><img src=\'http://photos3.meetupstatic.com/photos/event/7/7/7/c/600_445470588.jpeg\' /></p> <p>\'This hike features river views, a waterfall, wildflowers, amphibian breeding areas in spring, and some fascinating ruins as well. It includes Palisades along the Potomac and the rocky lower end of Scotts Run.\'</p> <p>Visitors have flocked to Scotts Run for years to witness the spring wildflowers that grow there. Sources say that trailing arbutus, Virginia bluebells, and trillium blooming on the steep hillsides create a small oasis of rare and fragile plants. Remarkable and rare species grow along the precipitous cliffs, in steep valleys and throughout the mature hardwood forest of huge oak and beech trees, ancient hemlock and wild cherry trees that stand as tall as the oaks.</p> <p>Scotts Run Nature Preserve consists of a rather hilly, wildflower-riddled tract of riverside woodlands scarcely four crow-miles northwest of Washington. For songbirds and other wildlife, it’s an actual sanctuary.</p> <p><img src=\'http://photos3.meetupstatic.com/photos/event/7/7/a/b/600_445470635.jpeg\' /></p> <p>Trail Information</p> <p>Activity Type: Hiking<br/>Nearby City: McLean (Very near DC but you would never know it! In the vicinity of Great Falls)<br/>Scenery: Rolling woodlands, river views, and seasonal wildflowers<br/>Exposure: Mostly shady with a couple of open areas where it is somewhat sandy near the river.<br/>Trail Surface: Mostly dirt or gravel; rocky, rooty near the river. There are some boulders too.<br/>Length: 4 total miles<br/>Elevation Gain: 1,900 feet but in undulating hills<br/>Trail Type: Our hike plan is a modified loop<br/>Skill Level: Moderate<br/>Season: Year-round<br/>Local Maps: USGS Falls Church, PATC Map D<br/>Facilities: None</p> <p><img src=\'http://photos1.meetupstatic.com/photos/event/7/7/9/1/600_445470609.jpeg\' /></p> <p>Park Entry Fee<br/>There is no park entrance fee.</p> <p>Gear Suggestions<br/>Click Here (<a href=\'http://midatlantichikinggroup.org/gear-information.html\' class=\'linkified\'>http://midatlantichikinggroup.org/gear-information.html</a>) for suggestions regarding what to wear and what not to wear for hiking the trails.</p> <p>Weather Information<br/>We hike rain or shine. Click Here (<a href=\'http://www.weather.com/weather/today/McLean+VA+USVA0485?from=enhsearch_didyoumean\' class=\'linkified\'>http://www.weather.com/weather/today/McLean+VA+USVA0485?from=enhsearch_didyoumean</a>) to view the forecast for the area where we will be hiking.</p> <p>Our RSVP and Group Etiquette<br/>Click Here (<a href=\'http://www.meetup.com/Maryland-Hiking/pages/RSVP_Rules_and_Etiquette/\' class=\'linkified\'>http://www.meetup.com/Maryland-Hiking/pages/RSVP_Rules_and_Etiquette/</a>) to review our RSVP policies and group etiquette.</p> <p><img src=\'http://photos2.meetupstatic.com/photos/event/7/7/b/1/600_445470641.jpeg\' /></p> <p>Carpool Suggestions and Information</p> <p>Note that you are responsible for knowing how to get from carpool locations to the venue. Mid-Atlantic Hiking Group is not responsible for transportation to and from events or carpools. Suggested carpool times and places are provided as a courtesy because many members are either new to the area or unfamiliar with a particular hike or venues location. Please use the \'Comments\' section below, or reach out via e-mail to make arrangements for carpooling needs and offerings.</p> <p>Baltimore Area Carpool Suggestion - Savage Station<br/>To carpool or caravan from the Baltimore area, people can arrange to meet at Savage Station. Click Here (<a href=\'http://www.meetup.com/Maryland-Hiking/pages/Carpool_Directions_for_Savage_Station/\' class=\'linkified\'>http://www.meetup.com/Maryland-Hiking/pages/Carpool_Directions_for_Savage_Station/</a>) for directions and additional information regarding carpooling from the suggested Savage Station location.</p> <p>If you can drive or want to carpool from additional locations, please post your location and needs in the comment section below. Click Here (<a href=\'http://www.meetup.com/Mid-Atlantic-Hiking-Group/pages/Suggested_Carpool_Locations/?name=Suggested_Carpool_Locations\' class=\'linkified\'>http://www.meetup.com/Mid-Atlantic-Hiking-Group/pages/Suggested_Carpool_Locations/?name=Suggested_Carpool_Locations</a>) for a list of suggested carpool locations complete with directions and other details including other carpool information. For those who need a ride, reach out to the drivers. Make friends, and support the environment — by just offering a ride!</p> <p><img src=\'http://photos1.meetupstatic.com/photos/event/7/7/a/2/600_445470626.jpeg\' /></p> <p>Directions to the Trailhead<br/>Click Here for Directions (<a href=\'http://midatlantichikinggroup.org/scotts-run.html\' class=\'linkified\'>http://midatlantichikinggroup.org/scotts-run.html</a>) to Where We Meet for This Hike</p> <p>Meet &amp; Greet and Sign-In — 9:45-9:55 a.m.</p> <p>The Hike is at 10:00 a.m.</p> <p>Please remember we are a volunteer-supported organization that values fellowship and camaraderie while practicing good hike etiquette (<a href=\'http://midatlantichikinggroup.org/hike-and-trail-etiquette.html)and\' class=\'linkified\'>http://midatlantichikinggroup.org/hike-and-trail-etiquette.html)and</a> Leave No Trace (<a href=\'http://midatlantichikinggroup.org/leave-no-trace.html\' class=\'linkified\'>http://midatlantichikinggroup.org/leave-no-trace.html</a>) principles. Our hikes are led by generous, dedicated, and qualified MAHG members who volunteer (<a href=\'http://www.meetup.com/Mid-Atlantic-Hiking-Group/pages/9595722/How_To_Join_Our_Leadership_Team!/\' class=\'linkified\'>http://www.meetup.com/Mid-Atlantic-Hiking-Group/pages/9595722/How_To_Join_Our_Leadership_Team!/</a>) as leaders for Mid-Atlantic Hiking Groups volunteer leadership team. Hikes also have a volunteer “sweeper” to help ensure that no hiker is left behind. MAHG volunteers and members are very supportive, encouraging, with a focus on safety while enjoying the excellent camaraderie and benefiting from the many health benefits of hiking and unplugging from the stress of day-to-day life. Sharing what we know and learning from each other is an important part of MAHGs core values, as is our dedication to the conservation of our natural resources and our commitment to the organization\'s mission (<a href=\'http://midatlantichikinggroup.org/\' class=\'linkified\'>http://midatlantichikinggroup.org/</a>). Mid-Atlantic Hiking Group is a volunteer-supported tax-exempt 501(c)(3) nonprofit charitable organization, (<a href=\'http://midatlantichikinggroup.org/mahg-charity.html\' class=\'linkified\'>http://midatlantichikinggroup.org/mahg-charity.html</a>) and donations ARE tax deductible (<a href=\'https://midatlantichikinggroup.networkforgood.com/projects/17107-fall-into-hiking-for-health\' class=\'linkified\'>https://midatlantichikinggroup.networkforgood.com/projects/17107-fall-into-hiking-for-health</a>). Tax ID:[masked] (<a href=\'http://midatlantichikinggroup.org/mahg-charity.html\' class=\'linkified\'>http://midatlantichikinggroup.org/mahg-charity.html</a>).</p> <p>A Well-Mannered, Leashed Fido is Welcome on this Hike!</p> <p>Let’s have fun out on the trails and see you there!</p> <p>Mike:\u202c</p> <p><img src=\'http://photos3.meetupstatic.com/photos/event/d/4/f/2/600_451494514.jpeg\' /></p> <p>• Please Click Here Now (<a href=\'https://secure.meetup.com/Mid-Atlantic-Hiking-Group/contribute/)and\' class=\'linkified\'>https://secure.meetup.com/Mid-Atlantic-Hiking-Group/contribute/)and</a> Help Mid-Atlantic Hiking Group with Serving our Mission (<a href=\'http://midatlantichikinggroup.org/index.html\' class=\'linkified\'>http://midatlantichikinggroup.org/index.html</a>).</p> <p>• Donations (<a href=\'https://midatlantichikinggroup.networkforgood.com/projects/33981-sponsor-a-veteran-today\' class=\'linkified\'>https://midatlantichikinggroup.networkforgood.com/projects/33981-sponsor-a-veteran-today</a>) to Mid-Atlantic Hiking Group are Tax Deductible: Tax ID[masked] (<a href=\'http://midatlantichikinggroup.org/mahg-charity.html\' class=\'linkified\'>http://midatlantichikinggroup.org/mahg-charity.html</a>). Mid-Atlantic Hiking Group is a 501(c)(3) non-profit public charitable organization.</p> <p>• Click Here (<a href=\'http://www.meetup.com/Mid-Atlantic-Hiking-Group/about/\' class=\'linkified\'>http://www.meetup.com/Mid-Atlantic-Hiking-Group/about/</a>) to Learn more about Mid-Atlantic Hiking Group’s Mission.</p> <p>• 100% of Every Dollar Goes Directly to the Expenses of Serving our Mission!!!</p> ',
+      how_to_find_us: 'Use the link provided under the paragraph heading “Directions to the Trailhead” located near the bottom of the event posting. It provides important information such as directions to the event, where we Meetup after you arrive, and other helpful info.',
+      visibility: 'public',
+      member_pay_fee: false
+    },
+    {
       created: 1582098084000,
       duration: 17940000,
       id: '1',
@@ -53,7 +111,7 @@ const mockEvents = {
       link: 'https://www.meetup.com/Games-Lounge/events/268821281/',
       description: '<p>Games Lounge is a regular event of the Videospielkultur e.V. at the event space of Werk 1 München near Ostbahnhof.</p> <p>You can find Werk 1 here: <a href="https://www.werk1.com/wp-content/uploads/sites/2/2019/04/wegbeschreibung_werk1_maerz_2.pdf" class="linkified">https://www.werk1.com/wp-content/uploads/sites/2/2019/04/wegbeschreibung_werk1_maerz_2.pdf</a></p> <p>We meet on Saturdays twice per month to play videogames from our extensive archive of old and new games. There are always different gaming stations available with something for everyone.</p> <p>There is no entry fee and free non-alcoholic drinks are available.</p> <p>If you haven\'t been to Games Lounge before you can find some impressions here: <a href="https://www.facebook.com/groups/videospielkultur/photos/" class="linkified">https://www.facebook.com/groups/videospielkultur/photos/</a></p> ',
       how_to_find_us: 'https://www.werk1.com/wp-content/uploads/sites/2/2019/04/wegbeschreibung_werk1_maerz_2.pdf',
-      visibility: 'public',
+      visibility: 'public_limited',
       member_pay_fee: false
     },
     {

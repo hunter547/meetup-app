@@ -18,13 +18,15 @@ class Event extends Component {
 
   render() {
     const { event } = this.props;
-    const colors = ['#F64060','#eee']
+    const colors = ['#F64060', '#41db3b']
     const pieData = [
-      {name: "Going", value: event.yes_rsvp_count},
-      {name: "Available", value: event.rsvp_limit - event.yes_rsvp_count}
+      { name: " " + event.yes_rsvp_count + " Going", value: event.yes_rsvp_count },
+      { name: " " + (event.rsvp_limit - event.yes_rsvp_count) + " Available", value: event.rsvp_limit - event.yes_rsvp_count }
     ];
+    const formatDescription = '<b>Description: </b>' + event.description;
+
     return (
-      <div className="Event" onClick={this.flipShowDetails}>
+      <div className="Event__grid-item" onClick={this.flipShowDetails}>
         <p className="Event__time">
           {event.local_time + '-' + event.local_date}
         </p>
@@ -37,42 +39,50 @@ class Event extends Component {
         <p className="Event__rsvps" >
           {event.yes_rsvp_count + ' people are going'}
         </p>
-        {event.rsvp_limit && event.yes_rsvp_count ?
-          <ResponsiveContainer height={200}>
-            <PieChart>
-              <Pie data={pieData} fill="#8884d8" dataKey="value" nameKey="name" cx="50%" cy="50%" label>
+        {this.state.showDetails ?
+          <div className="Event__details">
+            {event.rsvp_limit && event.yes_rsvp_count ?
+              <div>
+                <ResponsiveContainer height={200}>
+                  <PieChart>
+                    <Pie data={pieData} dataKey="value" nameKey="name" outerRadius={50}>
                       {
                         pieData.map((entry, index) => (
-                          <Cell key={`cell-${index}`} fill={colors[index]}/>
+                          <Cell key={`cell-${index}`} fill={colors[index]} />
                         ))
-                      } 
-              </Pie>
-              <Legend />
-              <Tooltip />
-            </PieChart>
-          </ResponsiveContainer>
-          :
-          null
-        }
-        {this.state.showDetails ?
-          <span className="Event__details">
-            {event.venue ? <p className="Event__address">
+                      }
+                    </Pie>
+                    <Legend iconType="circle" iconSize={10} />
+                    <Tooltip />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+              :
+              null
+            }
+            {event.venue ? <p className="Event__address"> <b>Address: </b><br />
               {event.venue.name + ', ' + event.venue.address_1 + ', ' +
                 event.venue.city + ', ' + event.venue.state + ' ' +
                 event.venue.zip
               }
             </p>
               : null}
-            <div className="Event__description" dangerouslySetInnerHTML={{ __html: event.description }}>
+            <div className="Event__description" dangerouslySetInnerHTML={{ __html: formatDescription }}>
             </div>
-            <p className="Event__visibility">
-              {event.visibility}
+            {event.visibility === 'public' ?
+            <p className="Event__visibility-green">
+              <b className="Event__visibility">Visibility: </b>{event.visibility}
             </p>
+            :
+            <p className="Event__visibility-red">
+              <b className="Event__visibility">Visibility: </b>public limited
+            </p>
+            }
             <a className="Event__link"
               href={event.link}>
               Event link
             </a>
-          </span>
+          </div>
           : null}
         <div className="Event__button-div">
           {this.state.showDetails ?

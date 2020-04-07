@@ -51,9 +51,11 @@ async function getSuggestions(query) {
 async function getEvents(lat, lon, page) {
   if (window.location.href.startsWith('http://localhost')) {
     if (page) {
+      localStorage.setItem('lastEvents', JSON.stringify(mockEvents.events));
       return mockEvents.events.slice(0,page);
     }
     else {
+      localStorage.setItem('lastEvents', JSON.stringify(mockEvents.events));
       return mockEvents.events;
     }
   }

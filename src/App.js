@@ -21,9 +21,11 @@ class App extends Component {
 
   state = {
     events: [],
+    renderedEvents: [],
     page: null,
     warningText: '',
-    showEvents: false
+    showEvents: false,
+    filterEvents: false
   }
 
   componentDidMount() {
@@ -34,7 +36,7 @@ class App extends Component {
   updateEvents = (lat, lon, page) => {
     getEvents(lat, lon, page ? page : this.state.page).then(events => {
       if (this._isMounted) {
-        this.setState({ events })
+        this.setState({ events, renderedEvents: events, filterEvents: false })
         if (!navigator.onLine) {
           this.setState({
             warningText: 'You\'re currently offline. Cached data is being displayed.'
@@ -88,10 +90,38 @@ class App extends Component {
         // Use the countEventsOnADate function to count #events on this date
         const count = this.countEventsOnADate(dateString);
         const aestheticDate = currentDate.format('MMMM Do');
-        next7Days.push({ Date: aestheticDate, Events: count }); // Add this date and number to the list
+        next7Days.push({ Date: aestheticDate, Events: count, local_date: dateString }); // Add this date and number to the list
       }
       return next7Days;
     }
+  }
+
+  getEvents = (event) => {
+    const events = [];
+    for (let i = 0; i < this.state.events.length; i += 1) {
+      if (event.payload.local_date === this.state.events[i].local_date) {
+        events.push(this.state.events[i]);
+      }
+    }
+    if (!this.state.filterEvents && this.state.events !== events) {
+      this.setState({
+        renderedEvents: events,
+        filterEvents: !this.state.filterEvents
+      });
+    }
+    else if (this.state.events !== events) {
+      this.setState({
+        renderedEvents: events
+      })
+    }
+  }
+
+  resetEvents = () => {
+    const events = localStorage.getItem('lastEvents');
+    this.setState({
+      renderedEvents: JSON.parse(events),
+      filterEvents: !this.state.filterEvents
+    })
   }
 
   render() {
@@ -102,28 +132,35 @@ class App extends Component {
           <CitySearch updateEvents={this.updateEvents} />
           <NumberOfEvents updateEvents={this.updateEvents} />
           <WarningAlert text={this.state.warningText} />
-          {this.state.showEvents ? 
-            <button className="App__show-events" onClick={this.flipChart}>See number of events this week &#8593;</button>
+          {this.state.showEvents ?
+            <button className="App__select-events-button" onClick={this.flipChart}>Select events this week &#8593;</button>
             :
-            <button className="App__show-events" onClick={this.flipChart}>See number of events this week &#8595;</button>
+            <button className="App__select-events-button" onClick={this.flipChart}>Select events this week &#8595;</button>
           }
-          {this.state.showEvents ? 
-            <ResponsiveContainer height={400}>
-            <BarChart
-              margin={{
-                top: 20, right: 20, bottom: 20, left: 20,
-              }}
-              data={this.getData()}>
-              <XAxis type="category" dataKey="Date" interval="preserveStartEnd" />
-              <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-              <Bar dataKey="Events" fill="#F64060">
-                <LabelList dataKey="Events" position="top" />
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>
-          :
-          null}
-          <EventList events={this.state.events} />
+          {this.state.showEvents ?
+            <ResponsiveContainer className="App__barchart" height={400}>
+              <BarChart
+                margin={{
+                  top: 20, right: 20, bottom: 20, left: 20,
+                }}
+                data={this.getData()}>
+                <XAxis type="category" dataKey="Date" interval="preserveStartEnd" />
+                <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+                <Bar className="App__barchart-bar" dataKey="Events" fill="#F64060" onClick={this.getEvents}>
+                  <LabelList dataKey="Events" position="top" />
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+            :
+            null}
+          {this.state.filterEvents ?
+            <div className="App__show-events-div">
+              <button className="App__show-events-button" onClick={this.resetEvents}>&#8592; Back to all events</button>
+            </div>          
+            :
+            null
+          }
+          <EventList events={this.state.renderedEvents} />
         </div>
       </div>
     );

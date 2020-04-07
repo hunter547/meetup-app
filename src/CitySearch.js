@@ -76,7 +76,7 @@ class CitySearch extends Component {
         <InfoAlert text={this.state.infoText} />
         <input
           type="text"
-          placeholder="City"
+          placeholder="Search for a city..."
           className="CitySearch__city"
           value={this.state.query}
           onChange={this.handleInputChanged}

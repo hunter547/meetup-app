@@ -70,8 +70,12 @@ class Event extends Component {
               }
             </p>
               : null}
-            <div className="Event__description" dangerouslySetInnerHTML={{ __html: formatDescription }}>
-            </div>
+            {event.description ? 
+              <div className="Event__description" dangerouslySetInnerHTML={{ __html: formatDescription }}>
+              </div>
+            :
+              null
+            }
             {event.visibility === 'public' ?
             <p className="Event__visibility-green">
               <b className="Event__visibility">Visibility: </b>{event.visibility}

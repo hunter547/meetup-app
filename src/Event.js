@@ -4,6 +4,7 @@ import downArrow from './svgs/down-arrow.svg';
 import {
   PieChart, Pie, Legend, Tooltip, ResponsiveContainer, Cell
 } from 'recharts';
+import moment from 'moment';
 
 class Event extends Component {
   state = {
@@ -18,7 +19,9 @@ class Event extends Component {
 
   render() {
     const { event } = this.props;
-    const colors = ['#F64060', '#41db3b']
+    const colors = ['#F64060', '#32CD32'];
+    const eventDate = moment(event.local_date);
+    const eventTime = moment(event.local_time, 'HH:mm')
     const pieData = [
       { name: " " + event.yes_rsvp_count + " Going", value: event.yes_rsvp_count },
       { name: " " + (event.rsvp_limit - event.yes_rsvp_count) + " Available", value: event.rsvp_limit - event.yes_rsvp_count }
@@ -28,7 +31,7 @@ class Event extends Component {
     return (
       <div className="Event__grid-item" onClick={this.flipShowDetails}>
         <p className="Event__time">
-          {event.local_time + '-' + event.local_date}
+          {eventDate.format('dddd, MMMM Do') + ' @ ' + eventTime.format('hh:mm a')}
         </p>
         <p className="Event__name">
           {event.name}

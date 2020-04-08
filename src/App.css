@@ -42,7 +42,7 @@ img {
   margin-bottom: 1rem;
 }
 
-.App__show-events:hover, .App__show-events-button:hover {
+.App__select-events-button:hover, .App__show-events-button:hover {
   cursor: pointer;
   background-color: #426778;
   transition: background-color .3s;
@@ -236,10 +236,16 @@ input[type="text"], input[type="number"] {
 }
 
 .Header__people-svg {
-  width: 35%;
+  width: 30%;
 }
 
 /* MEDIA QUERIES */
+
+@media (max-width: 2700px) {
+  .Header__people-svg {
+    width: 35%;
+  }
+}
 
 @media (max-width: 2300px) {
   .Header__people-svg {
